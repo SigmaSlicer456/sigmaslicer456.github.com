@@ -1,6 +1,36 @@
 html{
-    font-family: serif;
-    background: rgb(253, 254, 246);
+    font-family: "Raleway", sans-serif;
+    background: #F5FBE6;
     margin: 0;
+}
+
+#Hello{
+    color: #215E61;
+}
+
+.click-button{
+    color: #233D4D;
+}
+
+
+
+.titleflex{
+    display: flex;
+    flex-direction: column;
+    background-color: #FE7F2D;
+    padding: 20px;
+    justify-content: center;
+    margin: 20%;
+}
+
+.flexbox-grid{
+    display: flex;
+    gap: 0px; 
+    height: 50vh
+}
+
+.column{
+    
+    flex: 1;
 }
 
