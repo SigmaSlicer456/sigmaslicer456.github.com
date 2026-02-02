@@ -4,7 +4,7 @@ html{
     margin: 0;
 }
 
-#Hello{
+#titletext{
     color: #215E61;
 }
 
@@ -16,61 +16,118 @@ html{
     padding: 20px
 }
 
-
+.click-button:hover{
+    background-color: #233D4D;
+    color:#F5FBE6;
+    transform: scale(1.5);
+    transform: rotate(15deg);
+}
 
 .titleflex{
+    position: absolute;
+    background-color: #FE7F2D;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    background-color: #FE7F2D;
-    padding: 20px;
     justify-content: center;
     align-items: center;
-    margin: 20%;
-    transform: translateY(200px);
-    position:relative;
-    z-index: 3;
-    
+    text-align: center;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
 }
 
 
-
-.flexbox-grid{
+.introquadrant{
     display: flex;
-    gap: 0px; 
-    height: 50vh;
-    column-gap: 0px;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.quadrant{
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
+@media (max-width: 768px) {
+    .titleflex{
+        padding: 20px;
+        width: 90%
+    }
 
-.introimage{
-    width:100%;
-    position:relative;
-    z-index:0
+    #titletext{
+        font-size: 1.5rem;
+    }
+
+    .click-button{
+        padding: 15px;
+    }
 }
 
-#paintingphoto{
-    height:80%;
-    position:relative;
-    z-index: 2
+
+#page2start{
+    justify-content: center;
+    align-items: flex-start;
 }
 
-#rawmeat{
-    width:100%;
-    position:relative;
-    z-index: 4
-    
+#gallerytitle{
+    display: flex;
+    justify-content: center;
+    color: #FE7F2D;
 }
 
-#sciencetest{
-    width:110%;
-    position:relative;
-    z-index: 5
+.gallerysection{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #233D4D;
 }
 
-#totebag{
-    height:50%;
-    position:relative;
-    z-index: 6
+.gallery{
+    position:absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scrolling 30s linear infinite;
+    gap: 20px;
+}
+
+.gallery:hover{
+    animation-play-state: paused;
+}
+
+@keyframes scrolling{
+    0%{
+        transform: translateX(-50%) translateY(0);
+    }
+    100%{
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+.gallery-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: scale 30s linear infinite;
 }
 
