@@ -85,6 +85,7 @@ img{
 #gallerytitle{
     display: flex;
     justify-content: center;
+    font-family: "Raleway", sans-serif;
     color: #FE7F2D;
 }
 
@@ -96,38 +97,50 @@ img{
     background-color: #233D4D;
 }
 
-.gallery{
-    position:absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 400vh;
+
+.carousel{
+    margin: 100px auto;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none
+}
+
+.gallery{
+    display: flex;
     align-items: center;
-    animation: scrolling 30s linear infinite;
-    gap: 20px;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 15s infinite linear;
+    padding-right: 1em;
 }
 
-.gallery:hover{
-    animation-play-state: paused;
-}
 
-@keyframes scrolling{
-    0%{
-        transform: translateX(-50%) translateY(0);
-    }
-    100%{
-        transform: translateX(-50%) translateY(-50%);
-    }
+.gallery2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 30s infinite linear;
+    padding-right: 1em;
 }
 
 .gallery-item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    animation: scale 30s linear infinite;
+    flex: 0 0 5em;
+    width: 10em;
+    height: 10em;
+    padding: 1em;
+    border-radius: 4em;
+    align-items: center;
 }
+
+@keyframes spin{
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+
 
