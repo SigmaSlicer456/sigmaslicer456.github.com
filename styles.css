@@ -6,21 +6,27 @@ html{
 
 #titletext{
     color: #215E61;
+    animation: rubberBand;
+    animation-duration: 1s;
 }
+
 
 .click-button{
     display: flex;
     font-family: "Cabin", sans-serif;
     color: #233D4D;
     background-color: #F5FBE6;
-    padding: 20px
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 1 ease;
+    animation: heartBeat;
+    animation-duration: 1s;
 }
 
 .click-button:hover{
     background-color: #233D4D;
     color:#F5FBE6;
-    transform: scale(1.5);
-    transform: rotate(15deg);
+    transform: scale(1.1) rotate(15deg);
 }
 
 .titleflex{
@@ -45,7 +51,6 @@ html{
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
-
 }
 
 .quadrant{
@@ -99,10 +104,11 @@ img{
 
 
 .carousel{
-    margin: 100px auto;
+    margin: 30px auto;
     width: 100%;
     display: flex;
     overflow-x: auto;
+    overflow: hidden
 }
 
 .carousel::-webkit-scrollbar{
@@ -114,7 +120,7 @@ img{
     align-items: center;
     justify-content: center;
     gap: 1em;
-    animation: spin 15s infinite linear;
+    animation: move-left 20s infinite linear;
     padding-right: 1em;
 }
 
@@ -124,23 +130,45 @@ img{
     align-items: center;
     justify-content: center;
     gap: 1em;
-    animation: spin 30s infinite linear;
+    animation: move-right 60s infinite linear;
+    padding-left: 1em;
+}
+
+.gallery3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: move-left 7s infinite linear;
     padding-right: 1em;
+}
+
+.gallery4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: move-right 40s infinite linear;
+    padding-left: 1em;
 }
 
 .gallery-item img{
     flex: 0 0 5em;
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
     padding: 1em;
-    border-radius: 4em;
+    border-radius: 2em;
     align-items: center;
 }
 
-@keyframes spin{
+
+@keyframes move-left{
     from {translate: 0%;}
     to {translate: -100%;}
 }
 
-
+@keyframes move-right{
+    from {translate: -100%;}
+    to {translate: 0%;}
+}
 
